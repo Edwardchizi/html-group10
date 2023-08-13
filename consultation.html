@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultation Form</title>
+    <link rel="stylesheet" href="consultation.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+<style>
+    .header{
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(images/pexels-chepté-cormani-1416530.jpg);
+    background-position: center;
+    background-size:cover ;
+    position: relative;
+    border: yellow;
+}
+    
+  body{
+    padding: auto;
+    position: center;
+    background-size: cover;
+  }  
+
+* {
+        background-color: whitesmoke;
+}
+
+
+h2 {
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+    font-size: 30px;
+    background-color: palegreen;
+    color: blueviolet;
+
+}
+
+form {
+    text-align: center;
+}
+
+strong {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+input {
+    padding: 10px;
+    border-radius: 5px;
+}
+
+
+.columnwrapper, h3{
+    margin: auto;
+    padding: 10px;
+    background-size: cover;
+    position: center;
+
+}
+
+button {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    border-radius: 20px;
+    height: 40px;
+    width: 80px;
+    background-color: blueviolet;
+    font-size: 18px;
+    color: white;
+}
+
+button:hover {
+    background-color: aqua;
+    color: red;
+    cursor: pointer;
+}
+
+nav{
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-around;
+    align-items: center;
+    background-color: white;
+    position: relative;
+    width: 90%;
+    z-index: 1100;
+    border-bottom: blue, solid, 2px;
+    
+}
+
+nav img{
+    width: 200px;
+}
+
+.nav-links{
+    flex: 1;
+    text-align: right;
+}
+
+.nav-links ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+
+.nav-links ul li a {
+    text-decoration: none;
+    color: black;
+    
+}
+
+.nav-links ul li::after{
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: black;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+
+.nav-links ul li:hover::after{
+    width: 100%;
+}
+
+.nav-links ul li a:hover{
+    color: #0000ff;
+    transition: 0.5s ;
+}
+</style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-links" id="navLinks">
+            <i class="fa fa-square-xmark" onclick="hideMenu()"></i>
+            <ul>
+                <li><a href="home.html">HOME</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="">CONTACT</a></li>
+                <li><a href="">LOGIN/SIGNUP</a></li>
+                <li><a href="notification.html">NOTIFICATION</a></li>
+            </ul>
+        </div>
+        </nav>
+
+<div id="consultform">
+  <h2>Please Fill Out the Consultation Form</h2>
+  <form action="/form/consultationform.php" method="post">
+  <strong>Name</strong><br>
+    <div class="col-md-6">
+      <input type="text" name="firstname" required placeholder="First Name"><br><br>
+    </div>
+    <div class="col-md-6">
+      <input type="text" name="lastname" required placeholder="Last Name"><br><br>
+    </div>
+  <strong>Email</strong><br>
+  <div class="col-md-12">
+    <input type="text" name="email" id="email" required placeholder="example@example.com"><br><br>
+  </div>
+  <strong>Phone Number</strong><br>
+  <div class="col-md-3">
+    <input type="tel" name="phonenumber" required placeholder="08100002220">
+  </div><br>
+    <div class="columnwrapper">
+        <h3>Service of Interest</h3>
+    <div class="col-md-7">
+        <input class="radio" type="radio" name="servicesofinterest" value="corporate-and-conference"> Corporate and conference <br>
+        <input class="radio" type="radio" name="servicesofinterest" value="photo-facial"> Baby-shower-planning <br>
+        <input class="radio" type="radio" name="servicesofinterest" value="bridal-show-management"> Bridal show management <br>
+        <input class="radio" type="radio" name="servicesofinterest" value="children's-party-planning"> Children's party planning <br>
+        <input class="radio" type="radio" name="servicesofinterest" value="conference-planning-coordination "> Conference planning & coordination <br>
+        <input class="radio" type="radio" name="servicesofinterest" value="anniversary-party-planning"> Anniversary party planning <br>
+        <input class="radio" type="radio" name="servicesofinterest" value="birthday-party-planning"> Birthday party planning <br>
+        <input class="radio" type="radio" name="servicesofinterest" value="other"> Other<br>
+  </div>
+    <h3>Message</h3>
+    <textarea rows="2" cols="5" style="height:60px; width:300px;" placeholder="Others Please Specify"></textarea>
+    <br><br>
+  <button type="submit">Submit</button>
+  </form>
+</div>  
+</body>
+</html>
